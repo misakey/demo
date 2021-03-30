@@ -1,0 +1,14 @@
+{
+  "name": "misakey-demo-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Misakey (https://www.misakey.com)",
+  "license": "GPLv3",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
