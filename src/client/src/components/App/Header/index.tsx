@@ -3,9 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import InfoIcon from '@material-ui/icons/Info';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,9 +13,22 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    flexGrow: 1,
+  vault: {
+    marginLeft: theme.spacing(1),
+    fontSize: 18,
+    marginTop: theme.spacing(1),
   },
+  demonstration: {
+    flexGrow: 1,
+    marginLeft: theme.spacing(1),
+    fontSize: 14,
+    marginTop: theme.spacing(1.5),
+  },
+  link: {
+    color: '#fff',
+    margin: theme.spacing(1),
+    fontWeight: 'bold',
+  }
 }));
 
 const AppHeader:React.FunctionComponent = () => {
@@ -26,14 +38,24 @@ const AppHeader:React.FunctionComponent = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <img src="https://static.misakey.com/img/MisakeyLogoTypo.svg" height="40" alt="Misakey" />
-          <Typography variant="h6" className={classes.title}>
-            Misakey Demonstration - Vault
+          <img src="https://static.misakey.com/img/MisakeyLogoTypo.svg" height="33" alt="Misakey" />
+          <Typography className={classes.vault}>
+            Vault
+          </Typography>
+          <Typography className={classes.demonstration}>
+            Demonstration
+          </Typography>
+          <Typography>
+            <Link href="https://www.misakey.com" className={classes.link}>
+              Misakey ?
+            </Link>
           </Typography>
           <Tooltip title="Vous êtes sur une démonstration de la technologie Misakey. Toutes les données sont fake.">
-            <IconButton color="inherit" aria-label="info">
-              <InfoIcon />
-            </IconButton>
+            <Typography>
+              <Link href="#" className={classes.link}>
+                En savoir plus
+              </Link>
+            </Typography>
           </Tooltip>
         </Toolbar>
       </AppBar>

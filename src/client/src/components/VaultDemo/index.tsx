@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 
+import Header from './Header';
+
 import Cart from './Cart';
 import Confirmation from './Confirmation';
 
 import generateRandomCart from 'helpers/generateRandomCart';
+
+import { ThemeProvider } from '@material-ui/core/styles'
+
+import theme from './theme';
 
 import api from 'helpers/api';
 
@@ -39,29 +45,29 @@ const VaultDemo:React.FunctionComponent = () => {
     setStep('cart');
   }
 
-  if (step === 'cart') {
-    return (
-      <Cart
-        cart={cart}
-        email={email}
-        formError={formError}
-        isSending={isSending}
-        onNewOrder={onNewOrder}
-        onValidateCart={onValidateCart}
-        setEmail={setEmail}
-      />
-    );
-  } else if (step === 'confirm') {
-    return (
-      <Confirmation
-        cart={cart}
-        invitationLink={invitationLink}
-        onNewOrder={onNewOrder}
-      />
-    );
-  }
-  return null;
-
+  return (
+    <ThemeProvider theme={theme}>
+      <Header nProductsInCart={step === 'cart' ? 1 : 0}/>
+      
+        {(step === 'cart') ? (
+          <Cart
+            cart={cart}
+            email={email}
+            formError={formError}
+            isSending={isSending}
+            onNewOrder={onNewOrder}
+            onValidateCart={onValidateCart}
+            setEmail={setEmail}
+          />
+        ) : (
+          <Confirmation
+            cart={cart}
+            invitationLink={invitationLink}
+            onNewOrder={onNewOrder}
+          />
+        )}
+    </ThemeProvider>
+  );
 }
 
 export default VaultDemo;

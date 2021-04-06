@@ -19,28 +19,25 @@ const ConfirmationComponent = ({
   invitationLink,
   onNewOrder,
 }:ConfirmationProps):React.ReactElement => (
-  <Box m={3}>
-    <Card variant="outlined">
-      <CardContent>
-        <Typography variant="h5" component="h2">
-          Merci pour votre commande !
-        </Typography>
-        <Typography>
-          Vous avez commandé une paire de chaussures {cart.color}, pour {cart.price}€.
-        </Typography>
-        <Typography>
-          Vous avez reçu votre facture par email.
-        </Typography>
-        <Typography>
-          Vous pouvez également la consulter ici:
-        </Typography>
-        <Button href={invitationLink} target="_blank" rel="noopenener noreferrer" variant="contained" color="primary">Voir ma facture</Button>
-      </CardContent>
-      <CardActions>
-        <Button size="small" onClick={onNewOrder}>Refaire une commande</Button>
-      </CardActions>
-    </Card>
-  </Box>
+  <>
+    <Box my={2} p={1}>
+      <Typography variant="h4" align="center">
+        Merci pour votre commande !
+      </Typography>
+    </Box>
+    <Box>
+      <Typography>Une confirmation de votre commande vous a été envoyé par email.</Typography>
+      <Typography>Votre facture a également été envoyé dans votre coffre-fort personnel.</Typography>
+    </Box>
+    <Box my={5} display="flex" flexDirection="row" justifyContent="center" alignItems="center">
+      <Button href={invitationLink} target="_blank" rel="noopenener noreferrer" variant="contained" color="primary">
+        Voir ma facture dans mon coffre-fort
+      </Button>
+    </Box>
+    <Box my={5}>
+      <Button size="small" onClick={onNewOrder} variant="contained">Nouvelle commande</Button>
+    </Box>
+  </>
 );
 
 export default ConfirmationComponent;
