@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5000:5000
-    environment:
-      - ENV=development
+    volumes:
+      - "./.env.server:/app/.env"
   client:
     image: client:local-build
     build:
@@ -17,5 +17,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    environment:
-      - ENV=development
+    volumes:
+      - "./.env.client:/app/build/env.js"

@@ -4,10 +4,9 @@ LABEL stage=intermediate
 COPY ./src /app/src
 COPY ./public /app/public
 COPY ./package.json /app/package.json
-# COPY ./jsconfig.json /app/jsconfig.json
-# COPY ./config-overrides.js /app/config-overrides.js
+COPY ./tsconfig.json /app/tsconfig.json
 COPY ./yarn.lock /app/yarn.lock
-# COPY ./.eslintrc /app/.eslintrc
+COPY ./.eslintrc.js /app/.eslintrc.js
 # COPY ./.eslintignore /app/.eslintignore
 
 WORKDIR /app

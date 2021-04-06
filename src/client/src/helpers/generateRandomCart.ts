@@ -10,7 +10,7 @@ const colors = [
     'jaunes',
 ];
 
-interface Cart {
+export type Cart = {
     price: number;
     color: string;
   }

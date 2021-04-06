@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import VaultDemo from '../VaultDemo';
+
 import Container from '@material-ui/core/Container';
+
+import Header from './Header';
+import VaultDemo from 'components/VaultDemo';
 
 import './App.css';
 

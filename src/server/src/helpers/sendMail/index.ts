@@ -1,5 +1,7 @@
 import { SESClient, SendRawEmailCommand } from "@aws-sdk/client-ses";
 
+import logger from '~/logger';
+
 const mimemessage = require('mimemessage');
 
 const REGION = "eu-west-1";
@@ -7,12 +9,8 @@ const REGION = "eu-west-1";
 
 const sendMail = async (receiverAddress: string, subject:string, htmlContent:string, textContent:string, attachment:string, attachmentName:string) => {
   if (process.env.ENV === 'development') {
-    console.log(`Sending email to ${receiverAddress}`)
-    console.log(`Subject: ${subject}`)
-    console.log(`Content: ${textContent}`);
-    if (attachment.length > 0) {
-      console.log(`With attachment: ${attachmentName}`);
-    }
+    logger.info(`Sending email to ${receiverAddress} - Subject: ${subject}${attachment.length > 0 ? `With attachment: ${attachmentName}` : ''}`)
+    logger.debug(`Content: ${textContent}`);
     return { isError: false, data: null };
   } else if (process.env.ENV === 'production') {
     const mailContent = mimemessage.factory({contentType: 'multipart/mixed',body: []});
