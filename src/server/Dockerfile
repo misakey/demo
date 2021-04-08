@@ -10,5 +10,6 @@ COPY .eslintrc.js ./
 RUN npm install
 COPY . .
 RUN npm run build
+RUN npm install -g pm2
 
-CMD [ "node", "dist/index.js" ]
+CMD [ "pm2-runtime", "start", "dist/index.js", "-i", "max"]

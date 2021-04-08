@@ -1,0 +1,1 @@
+export default (variableToTest:any):Boolean => variableToTest === null || variableToTest === undefined;
