@@ -12,4 +12,4 @@ COPY . .
 RUN npm run build
 RUN npm install -g pm2
 
-CMD [ "pm2-runtime", "start", "dist/index.js", "-i", "max"]
+CMD ["pm2-runtime", "ecosystem.config.js"]

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.10.0",
+    "@misakey/sdk": "0.1.5",
     "app-root-path": "^3.0.0",
     "dotenv": "^8.2.0",
     "easyinvoice": "^1.0.111",
