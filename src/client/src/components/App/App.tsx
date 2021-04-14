@@ -11,7 +11,7 @@ const App:React.FunctionComponent = () => {
   return (
     <>
       <Header/>
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <VaultDemo />
       </Container>
     </>

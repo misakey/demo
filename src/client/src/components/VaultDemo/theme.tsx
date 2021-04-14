@@ -11,17 +11,4 @@ export default createMuiTheme({
           main: green[500],
         }
     },
-    overrides: {
-      MuiAppBar:{
-        root: {
-          // boxShadow: 'none !important',
-        }
-      },
-      MuiButton: {
-        root: {
-          boxShadow: 'none !important',
-          borderRadius: 50,
-        },
-      },
-    }
 });

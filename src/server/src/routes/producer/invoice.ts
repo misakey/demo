@@ -34,7 +34,7 @@ export const postInvoiceProducer = (req: Request, res: Response) => {
                 dataTag: 'purchase'
               });
 
-              sendInvoiceConfirmationEmail(req.body.email, result.pdf, invitationLink).then((sendEmailReturn:any) => {
+              sendInvoiceConfirmationEmail(req.body.email, result.pdf, invitationLink, result.invoiceData).then((sendEmailReturn:any) => {
                 if (sendEmailReturn.isError) {
                   if (sendEmailReturn.error.Type === 'Sender' && sendEmailReturn.error.Code === 'AccessDenied') {
                       // res.sendStatus(418);

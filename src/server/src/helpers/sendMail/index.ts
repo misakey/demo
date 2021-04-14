@@ -23,7 +23,7 @@ const sendMail = async (receiverAddress: string, subject:string, htmlContent:str
     return { isError: false, data: null };
   } else if (process.env.ENV === 'production') {
     const mailContent = mimemessage.factory({contentType: 'multipart/mixed',body: []});
-    mailContent.header('From', 'MTS <demo@misakey.com>');
+    mailContent.header('From', 'AppDemo <demo@misakey.com>');
     mailContent.header('To',receiverAddress);
     mailContent.header('Subject', subject);
   

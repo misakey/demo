@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,22 +13,30 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  demo: {
+    flexGrow: 1,
+  },
   vault: {
     marginLeft: theme.spacing(1),
     fontSize: 18,
     marginTop: theme.spacing(1),
   },
-  demonstration: {
-    flexGrow: 1,
-    marginLeft: theme.spacing(1),
-    fontSize: 14,
-    marginTop: theme.spacing(1.5),
-  },
   link: {
     color: '#fff',
     margin: theme.spacing(1),
     fontWeight: 'bold',
-  }
+  },
+  appBar: {
+    height: 30,
+    background: 'white',
+  },
+  toolBar: {
+    height: 30,
+    minHeight: 'unset',
+  },
+  see: {
+    marginRight: 5,
+  },
 }));
 
 const AppHeader:React.FunctionComponent = () => {
@@ -36,28 +44,17 @@ const AppHeader:React.FunctionComponent = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <img src="https://static.misakey.com/img/MisakeyLogoTypo.svg" height="33" alt="Misakey" />
-          <Typography className={classes.vault}>
-            Vault
-          </Typography>
-          <Typography className={classes.demonstration}>
-            Demonstration
-          </Typography>
-          <Typography>
-            <Link href="https://www.misakey.com" className={classes.link}>
-              Misakey ?
-            </Link>
-          </Typography>
-          <Tooltip title="Vous êtes sur une démonstration de la technologie Misakey. Toutes les données sont fake.">
-            <Typography>
-              <Link href="#" className={classes.link}>
-                En savoir plus
-              </Link>
+      <AppBar position="fixed" color="transparent" className={classes.appBar}>
+          <Toolbar className={classes.toolBar} component={Link} href="https://www.misakey.com" underline="none" color="inherit" target="_blank" rel="noopener noreferrer">
+            <Typography className={classes.demo}>
+              Site de simulation
             </Typography>
-          </Tooltip>
-        </Toolbar>
+            <Typography className={classes.see}>
+              Voir
+            </Typography>
+            <img src="https://static.misakey.com/img/MisakeyLogoTypo.svg" height="20" alt="Misakey" />
+            <ArrowForwardIosIcon fontSize="small" />
+          </Toolbar>
       </AppBar>
     </div>
   );

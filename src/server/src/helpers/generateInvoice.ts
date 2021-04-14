@@ -22,7 +22,7 @@ const generateInvoice = (email:string, cart: Cart, callback: Callback) => {
     "marginBottom": 25,
     "logo": "https://static.misakey.com/img/demo/LogoMTS.png",
     "sender": {
-        "company": "MTS",
+        "company": "AppDemo",
         "address": "1 Rue de la liberté",
         "zip": "75001",
         "city": "Paris",

@@ -8,6 +8,7 @@ import Confirmation from './Confirmation';
 import generateRandomCart from 'helpers/generateRandomCart';
 
 import { ThemeProvider } from '@material-ui/core/styles'
+import Box from '@material-ui/core/Box'
 
 import theme from './theme';
 
@@ -47,25 +48,26 @@ const VaultDemo:React.FunctionComponent = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header nProductsInCart={step === 'cart' ? 1 : 0}/>
-      
-        {(step === 'cart') ? (
-          <Cart
-            cart={cart}
-            email={email}
-            formError={formError}
-            isSending={isSending}
-            onNewOrder={onNewOrder}
-            onValidateCart={onValidateCart}
-            setEmail={setEmail}
-          />
-        ) : (
-          <Confirmation
-            cart={cart}
-            invitationLink={invitationLink}
-            onNewOrder={onNewOrder}
-          />
-        )}
+      <Header onNewOrder={onNewOrder} />
+        <Box mt={14}>
+          
+          {(step === 'cart') ? (
+            <Cart
+              cart={cart}
+              email={email}
+              formError={formError}
+              isSending={isSending}
+              onValidateCart={onValidateCart}
+              setEmail={setEmail}
+            />
+          ) : (
+            <Confirmation
+              invitationLink={invitationLink}
+              onNewOrder={onNewOrder}
+            />
+          )}
+
+      </Box>
     </ThemeProvider>
   );
 }

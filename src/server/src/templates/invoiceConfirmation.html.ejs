@@ -7,10 +7,41 @@
   <title>Document</title>
 </head>
 <body>
-  <p>
-    Bonsoir, voici votre facture.
-  </p>
-
-  Pour la voire dans votre vault, cliquez <a href="<%= invitationLink  %>">ici</a>.
+  <div style="max-width: 400px; margin: auto;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <img src="https://static.misakey.com/img/demo/LogoMTS.png" alt="AppDemo" style="width: 100px; margin: auto; display: block;">
+    <p style="text-align: center;font-size: 1.2em;">
+      Bonjour <%= name %>,<br />
+      Votre achat sur AppDemo est confirmé.
+    </p>
+    <p style="font-size: 0.8em; color: #444444; text-align: center; margin-top: 30px;">
+      Merci de votre confiance. Nous allons vous envoyer prochainement votre numéro de suivi de livraison.
+    </p>
+    <hr style="border-top: 0;"/>
+    <p>
+      <strong>Commande n°<%= purchaseNumber %></strong>
+    </p>
+    <p>
+      <%= productName %><br/>
+      <%= productPrice %>€
+    </p>
+    <hr style="border-top: 0;"/>
+    <p style="font-size: 0.8em; color: #444444; text-align: center; margin-top: 30px;">
+      Toutes vos informations d'achat et votre facture peuvent être trouvées dans votre coffre-fort personnel.
+    </p>
+    <a href="<%= invitationLink  %>" style="color: white; background-color: #e31e71; padding:5px; width: 100%; display: block; text-align: center; text-decoration: none; border-radius: 100px;">
+      VOIR MON COFFRE-FORT
+    </a>
+    <p style="font-size: 0.6em; color: #666666 !important; text-align: center; margin-top: 2px;">
+      <a style="text-decoration:none; color: #666666 !important;"><%= email %></a>
+    </p>
+  
+    <hr style="border-top: 0;"/>
+    <p style="font-size: 0.8em; color: #666666; text-align: center;">
+      Si vous avez le moindre doute sur l'origine de ce message, envoyez nous un email à contact@appdemo.com<br >
+      Veuillez ne transférer ce message à personne. <br/>
+      Prenez soin de vous et gardez vos données confidentielles.<br/>
+      L'équipe AppDemo
+    </p>  
+  </div>
 </body>
 </html>
