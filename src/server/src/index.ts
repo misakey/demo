@@ -1,4 +1,6 @@
 import dotenv from "dotenv";
+// XXX required because of the `new Misakey(..)` in `invoice.ts`
+// TODO use a singleton instead?
 dotenv.config();
 
 import express from "express";
