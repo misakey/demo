@@ -1,12 +1,14 @@
 import dotenv from "dotenv";
+// XXX required because of the `new Misakey(..)` in `invoice.ts`
+// TODO use a singleton instead?
+dotenv.config();
+
 import express from "express";
 import registerRoutes from "./routes";
 
 const morgan = require('morgan');
 
 import logger from './logger';
-
-dotenv.config();
 
 const port = process.env.SERVER_PORT;
 const app = express();
