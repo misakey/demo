@@ -8,13 +8,13 @@ const Misakey = require('@misakey/sdk');
 
 import logger from '~/logger';
 
+const misakey = new Misakey(process.env.MISAKEY_CLIENT_ID, process.env.MISAKEY_CLIENT_SECRET);
+
 export const postInvoiceProducer = (req: Request, res: Response) => {
   if (isEmail(req.body.email)) {
       generateInvoice(req.body.email, req.body.cart, async (result:any) => {
           // The response will contain a base64 encoded PDF file
           try {
-              const misakey = new Misakey(process.env.MISAKEY_CLIENT_ID, process.env.MISAKEY_CLIENT_SECRET);
-
               const { invitationLink } = await misakey.pushMessages({
                 messages: [
                   `Merci pour votre commande !`,

@@ -1,12 +1,12 @@
 import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import registerRoutes from "./routes";
 
 const morgan = require('morgan');
 
 import logger from './logger';
-
-dotenv.config();
 
 const port = process.env.SERVER_PORT;
 const app = express();
