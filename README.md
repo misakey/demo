@@ -39,5 +39,8 @@ services:
     environment:
       - ENV=development
 ```
+Copy the `.env.server.sample` to `.env.server` and complete it (with org id / secret from app.misakey) 
+
+Copy the `.env.client.sample` to `.env.client` and complete it (with org id / secret from app.misakey) 
 
 Then `docker-compose up` and you'll have a development server running for backend and frontend
