@@ -595,10 +595,10 @@
     uuid "^3.3.3"
     validator "^13.0.0"
 
-"@misakey/sdk@0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.1.5.tgz#458654d692858df46d94d768bca2b499b83e7b6d"
-  integrity sha512-59Yv1vSwi42fMUxKg3eOfsGSvEZM6L89zg3v1Mf/ZHcDgmkFDGriAlolJPfEnWE+VYvmLQYTGDHpy4XhIJFERw==
+"@misakey/sdk@0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.2.6.tgz#dddaab108f8d43f9eca7d286714425d6efe201f4"
+  integrity sha512-prv3DlYARXvfpkEXOwMpFMjzQFr8qFU0Nt/F3T7w+4YlHx+GR44dQ3knMIB9UjwV8aY7N/ehOzvmpuaD93I/ZQ==
   dependencies:
     "@misakey/core" "^0.1.5"
     form-data "^4.0.0"
