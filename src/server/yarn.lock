@@ -575,32 +575,32 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@misakey/core@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@misakey/core/-/core-0.1.5.tgz#7c1f8f831071d98ff7331098493188012d1e677e"
-  integrity sha512-2uE4OTYvPgHQQKj5vR1zTdReD+L3PcFQ0ZjGi9XAF+yr6MTLThz7R/Hlw7KNeslG6S46Hc5mbIAK5pSZqTa6OQ==
+"@misakey/core@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@misakey/core/-/core-0.3.0.tgz#188cfddbb392ea2e5fc69a659acc87cef919906b"
+  integrity sha512-Fri+gYypWX3Zc/R+AkCGegwd7pIlHWToxztL5YYoZmxs/tTZTWlRIwWvV45+6oMRB5xTs38ddlonzrJ2MfTs3A==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@sentry/browser" "^5.15.5"
     comlink "^4.3.0"
     copy-to-clipboard "^3.3.1"
     http-status-codes "^2.x"
-    jsrsasign "^10.1.4"
     lodash "^4.17.20"
     moment "^2.x"
     path-to-regexp "^3.0.0"
     ramda "^0.27.0"
     tweetnacl "^1.0.1"
     tweetnacl-util "^0.15.0"
+    ua-parser-js "^0.7.21"
     uuid "^3.3.3"
     validator "^13.0.0"
 
-"@misakey/sdk@0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.2.6.tgz#dddaab108f8d43f9eca7d286714425d6efe201f4"
-  integrity sha512-prv3DlYARXvfpkEXOwMpFMjzQFr8qFU0Nt/F3T7w+4YlHx+GR44dQ3knMIB9UjwV8aY7N/ehOzvmpuaD93I/ZQ==
+"@misakey/sdk@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.3.4.tgz#5b22ed935d02cbd36add271d9a4614fa30163dc4"
+  integrity sha512-3K39xe8SuPXiA5wegn+vGjtzCftAb4yD4m3/o0wWKvjswvnh1ND9QWWo7lNl1Ov4NeiAKVr69N6EJLcyyY7OOA==
   dependencies:
-    "@misakey/core" "^0.1.5"
+    "@misakey/core" "^0.3.0"
     form-data "^4.0.0"
     mime-types "^2.1.30"
     node-fetch "^2.6.1"
@@ -2278,11 +2278,6 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
 
-jsrsasign@^10.1.4:
-  version "10.1.13"
-  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-10.1.13.tgz#737f752b5ea321ccae5be25431e2df98ef1d369a"
-  integrity sha512-EKifn2DocDxU2fWVqTJgFYjZUcL4fTUtfgN5OQP4t4i/WOioios8wq350E1aJFxCLmtdxGNqhLX3O0tdVqJoFg==
-
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
@@ -3395,6 +3390,11 @@ typescript@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
   integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
+
+ua-parser-js@^0.7.21:
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 unbox-primitive@^1.0.0:
   version "1.0.1"

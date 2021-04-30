@@ -9,6 +9,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import { Link as RouterLink } from "react-router-dom";
 
 interface ConfirmationProps {
   invitationLink:string,
@@ -63,6 +64,11 @@ const ConfirmationComponent = ({
       <Box my={5}  display="flex" justifyContent="center" alignItems="center">
         <Link onClick={onNewOrder} color="textPrimary" href="#">
           Retour au simulateur de panier
+        </Link>
+      </Box>
+      <Box my={5}  display="flex" justifyContent="center" alignItems="center">
+        <Link  color="textPrimary" component={RouterLink} to="/sync">
+          Voir la démo Link à présent
         </Link>
       </Box>
     </>

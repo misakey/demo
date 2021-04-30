@@ -6,11 +6,10 @@ import 'typeface-roboto';
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './constants/theme';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-        <App />
+      <App />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

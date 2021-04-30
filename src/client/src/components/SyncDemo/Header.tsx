@@ -2,20 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import logoMTS from './LogoMTS.png';
-
 import Typography from '@material-ui/core/Typography';
 
 import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import LoopIcon from '@material-ui/icons/Loop';
 
 import { grey } from '@material-ui/core/colors';
-
-
-interface HeaderProps {
-  onNewOrder: (e: React.FormEvent) => void,
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VaultHeader = ({ onNewOrder }:HeaderProps):React.ReactElement => {
+const SyncHeader = ():React.ReactElement => {
   const classes = useStyles();
 
   return (
@@ -58,20 +49,14 @@ const VaultHeader = ({ onNewOrder }:HeaderProps):React.ReactElement => {
         <Toolbar>
           <Grid container spacing={3}>
             <Grid item xs={2} className={classes.appLogo}>
-              <img src={logoMTS} height="33" alt="Misakey" />
               <Typography className={classes.appName}>
-                AppDemo
+                Sync Demo
               </Typography>
             </Grid>
             <Grid item xs={8} className={classes.myCart}>
               <Typography variant="h6" align="center">
-                Mon Panier
+                Mon nouvel objet en vente
               </Typography>
-            </Grid>
-            <Grid item xs={2} className={classes.refresh}>
-              <IconButton onClick={onNewOrder}>
-                <LoopIcon className={classes.icon} />
-              </IconButton>
             </Grid>
           </Grid>
         </Toolbar>
@@ -80,4 +65,4 @@ const VaultHeader = ({ onNewOrder }:HeaderProps):React.ReactElement => {
   );
 }
 
-export default VaultHeader;
+export default SyncHeader;
