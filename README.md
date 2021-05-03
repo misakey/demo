@@ -15,7 +15,7 @@ The dev env doesn't not work with Docker. So you should run manually the two dev
 
 Go on `src/server`
 
-Copy the `.env.server.sample` to `.env.server` and complete:
+Copy the `.env.sample` to `.env.server` and complete:
 ```
 MISAKEY_CLIENT_ID= // orgId of the producer app
 MISAKEY_CLIENT_SECRET= // secret of the producer app
