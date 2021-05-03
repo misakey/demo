@@ -15,7 +15,12 @@ The dev env doesn't not work with Docker. So you should run manually the two dev
 
 Go on `src/server`
 
-Copy the `.env.sample` to `.env` and complete it (with org id / secret of the producer app that you can generate on app.misakey.)
+Copy the `.env.server.sample` to `.env.server` and complete:
+```
+MISAKEY_CLIENT_ID= // orgId of the producer app
+MISAKEY_CLIENT_SECRET= // secret of the producer app
+MISAKEY_CRYPTO_SECRET= // leave blank for now
+```
 
 Then run `yarn install` and `yarn start`. It should run dev server on port 5000
 
@@ -30,8 +35,13 @@ Then run `yarn install` and `yarn start`. It should run dev server on port 3000 
 
 ## Production
 
-Copy the `.env.server.sample` to `.env.server` and complete it (with org id / secret of the producer app that you can generate on app.misakey.)
- 
-Copy the `.env.client.sample` to `.env.client` and complete it (with org id / secret from app.misakey) 
+Copy the `.env.server.sample` to `.env.server` and complete:
+```
+MISAKEY_CLIENT_ID= // orgId of the producer app
+MISAKEY_CLIENT_SECRET= // secret of the producer app
+MISAKEY_CRYPTO_SECRET= // leave blank for now
+```
+
+Copy the `.env.client.sample` to `.env.client` (no modifications are required for now)
 
 Then `docker-compose up` and you'll have a production server running for server and client.
