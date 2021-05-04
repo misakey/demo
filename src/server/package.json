@@ -4,7 +4,7 @@
   "description": "This is a simple expressJS application template using NodeJS and Typescript",
   "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
+    "start": "MISAKEY_SDK_BASE_TARGET_DOMAIN=misakey.com.local NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon --watch src -e ts,ejs --exec npm run dev:start",
     "dev": "node .",
     "dev:start": "npm-run-all build link-module dev",
     "build": "npm-run-all clean lint tsc link-module copy-assets",

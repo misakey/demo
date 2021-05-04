@@ -9,38 +9,39 @@ This repository contains the Misakey's product demonstrations.
 
 ## Development
 
-Create a `docker-compose.override.yml` file with content
+The dev env doesn't not work with Docker. So you should run manually the two dev servers
 
-```yaml
-version: '2'
+### Server
 
-services:
-  server:
-    image: server:local-build
-    build:
-      context: "src/server"
-      dockerfile: Dockerfile.dev
-    ports:
-      - 5000:5000
-    volumes:
-      - "./src/server:/app"
-    environment:
-      - ENV=development
+Go on `src/server`
 
-  client:
-    image: client:local-build
-    build:
-      context: "src/client"
-      dockerfile: Dockerfile.dev
-    ports:
-      - 3000:3000
-    volumes:
-      - "./src/client:/app"
-    environment:
-      - ENV=development
+Copy the `.env.sample` to `.env` and complete:
 ```
-Copy the `.env.server.sample` to `.env.server` and complete it (with org id / secret from app.misakey) 
+MISAKEY_CLIENT_ID= // orgId of the producer app
+MISAKEY_CLIENT_SECRET= // secret of the producer app
+MISAKEY_CRYPTO_SECRET= // leave blank for now
+```
 
-Copy the `.env.client.sample` to `.env.client` and complete it (with org id / secret from app.misakey) 
+Then run `yarn install` and `yarn start`. It should run dev server on port 5000
 
-Then `docker-compose up` and you'll have a development server running for backend and frontend
+
+### Client
+
+Go on `src/client`
+
+Copy the `.env.sample` to `.env` (no modifications are required for now)
+
+Then run `yarn install` and `yarn start`. It should run dev server on port 3000 + open your brower
+
+## Production
+
+Copy the `.env.server.sample` to `.env.server` and complete:
+```
+MISAKEY_CLIENT_ID= // orgId of the producer app
+MISAKEY_CLIENT_SECRET= // secret of the producer app
+MISAKEY_CRYPTO_SECRET= // leave blank for now
+```
+
+Copy the `.env.client.sample` to `.env.client` (no modifications are required for now)
+
+Then `docker-compose up` and you'll have a production server running for server and client.
