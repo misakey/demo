@@ -6,7 +6,7 @@ import { MisakeyClient } from '@misakey/sdk';
 
 const misakeySdk:any = new MisakeyClient({
     organizationId: window.env.MISAKEY_CLIENT_ID,
-    redirectUri: 'http://localhost:5000/user/callback'
+    redirectUri: window.env.MISAKEY_REDIRECT_URI,
   });
 
   export default misakeySdk;

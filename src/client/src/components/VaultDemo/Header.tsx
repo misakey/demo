@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,6 +12,7 @@ import LoopIcon from '@material-ui/icons/Loop';
 
 import { grey } from '@material-ui/core/colors';
 
+import updateFavicons from 'helpers/updateFavicons';
 
 interface HeaderProps {
   onNewOrder: (e: React.FormEvent) => void,
@@ -51,6 +52,19 @@ const useStyles = makeStyles((theme) => ({
 
 const VaultHeader = ({ onNewOrder }:HeaderProps):React.ReactElement => {
   const classes = useStyles();
+
+  const mounted = useRef(false);
+
+  useEffect(
+    () => {
+      if (mounted.current === false) {
+        updateFavicons(true);
+      }
+      mounted.current = true;
+    },
+    [mounted],
+  );
+
 
   return (
     <div className={classes.root}>

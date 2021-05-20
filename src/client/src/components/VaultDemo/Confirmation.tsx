@@ -68,7 +68,7 @@ const ConfirmationComponent = ({
       </Box>
       <Box my={5}  display="flex" justifyContent="center" alignItems="center">
         <Link  color="textPrimary" component={RouterLink} to="/sync">
-          Voir la démo Link à présent
+          Voir la démo Sync à présent
         </Link>
       </Box>
     </>

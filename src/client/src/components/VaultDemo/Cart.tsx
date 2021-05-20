@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Cart, colorsToHex } from 'helpers/generateRandomCart';
 
-import { ReactComponent as ShoeIcon } from './shoe.svg';
+import { ReactComponent as ShoeIcon } from 'ressources/img/shoe.svg';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 

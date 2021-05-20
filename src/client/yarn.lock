@@ -1533,10 +1533,10 @@
     uuid "^3.3.3"
     validator "^13.0.0"
 
-"@misakey/sdk@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.3.4.tgz#5b22ed935d02cbd36add271d9a4614fa30163dc4"
-  integrity sha512-3K39xe8SuPXiA5wegn+vGjtzCftAb4yD4m3/o0wWKvjswvnh1ND9QWWo7lNl1Ov4NeiAKVr69N6EJLcyyY7OOA==
+"@misakey/sdk@^0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@misakey/sdk/-/sdk-0.3.5.tgz#cbc53cc9403d3dea5e832737f5e8abcfd22805d3"
+  integrity sha512-wh0ozZ6R0jcP8mtmdIzUYwjqABSSoOg6KSd8/OrorJZb2xfOQ3eDCzQYwdCf9Yyl4dRHkOH2ohxq12lfKZzx/w==
   dependencies:
     "@misakey/core" "^0.3.0"
     form-data "^4.0.0"
