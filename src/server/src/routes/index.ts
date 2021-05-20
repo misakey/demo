@@ -1,43 +1,13 @@
-const easyinvoice:any = require('easyinvoice');
-const fs = require('fs');
-
-import * as express from "express";
-
-const Misakey = require('@misakey/sdk');
+import { Application } from "express";
 
 import { postInvoiceProducer } from './producer/invoice';
+import { authCallback } from './consummer/user';
+import { getInvoices } from './consummer/data';
 
-const CALLBACK_CONFIG = {
-    client: 'http://localhost:3000/sync/callback',
-    server: 'http://localhost:5000/user/callback'
-  }
-
-const registerRoutes = (app: express.Application) => {
+const registerRoutes = (app: Application) => {
     app.post('/producer/invoice', postInvoiceProducer);
-    app.get('/user/callback', async (req: express.Request, res: express.Response) => {
-        try {
-            const misakey = new Misakey(process.env.MISAKEY_CLIENT_ID, process.env.MISAKEY_CLIENT_SECRET);
-            const { 
-              idToken, 
-              clientCallbackLocation, 
-              accessToken,
-            } = await misakey.exchangeUserToken(req.query, CALLBACK_CONFIG);
-    
-            res.setHeader('Set-Cookie', `misakey_access_token=${accessToken}; HttpOnly`);
-            
-            res.writeHead(302, { Location: clientCallbackLocation });
-            res.end();
-        } catch (error) {
-            try {
-              console.error('ERROR:', error);
-              console.log('ERROR INFO', Object.getOwnPropertyNames(error.message))
-              res.writeHead(302, {Location: `${CALLBACK_CONFIG.client}?error=${error.message}`});
-              res.send();
-            } finally {
-              res.status(500);
-            }
-        }
-    });
+    app.get('/user/callback', authCallback);
+    app.get('/consumer/invoice/:dataSubject/:producerId', getInvoices);
 };
 
 export default registerRoutes;

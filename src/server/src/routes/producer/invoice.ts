@@ -4,11 +4,9 @@ import isEmail from '~/helpers/isEmail';
 import sendInvoiceConfirmationEmail from '~/helpers/sendMail/sendInvoiceConfirmationEmail';
 import generateInvoice from '~/helpers/generateInvoice';
 
-const Misakey = require('@misakey/sdk');
+import misakey from '~/constants/misakey/producer';
 
 import logger from '~/logger';
-
-const misakey = new Misakey(process.env.MISAKEY_CLIENT_ID, process.env.MISAKEY_CLIENT_SECRET);
 
 export const postInvoiceProducer = (req: Request, res: Response) => {
   if (isEmail(req.body.email)) {
@@ -18,7 +16,7 @@ export const postInvoiceProducer = (req: Request, res: Response) => {
               const { invitationLink } = await misakey.pushMessages({
                 messages: [
                   `Merci pour votre commande !`,
-                  `Vous avez commandé une paire de chaussure ${req.body.cart.color} à ${req.body.cart.price}€.`,
+                  `Vous avez commandé une paire de chaussures ${req.body.cart.color} à ${req.body.cart.price}€.`,
                   `Voici votre facture:`,
                   {
                     data: result.pdfBuff,

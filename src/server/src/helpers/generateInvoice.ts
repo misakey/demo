@@ -50,8 +50,8 @@ const generateInvoice = (email:string, cart: Cart, callback: Callback) => {
 
   easyinvoice.createInvoice(invoiceData, (result:any) => {
     const invoiceDataFile = JSON.stringify(invoiceData);
-    result.jsonBuff = new Buffer(invoiceDataFile);;
-    result.pdfBuff = new Buffer(result.pdf, 'base64');
+    result.jsonBuff = Buffer.from(invoiceDataFile);;
+    result.pdfBuff = Buffer.from(result.pdf, 'base64');
     result.invoiceData = invoiceData;
     callback(result);
   });
