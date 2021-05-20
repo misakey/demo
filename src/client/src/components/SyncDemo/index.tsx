@@ -12,35 +12,7 @@ import AskConsentButton from './AskConsentButton';
 
 import api from 'helpers/api';
 
-
 import { PURCHASE_SCOPE } from 'constants/scopes';
-
-const purchases = [
-  {
-    invoiceNumber: 554234,
-    invoiceDate: '13/05/2021',
-    products: [
-        {
-            quantity: "1",
-            description: `Chaussures rouges`,
-            price: 120,
-            tax: 20,
-        }
-    ],
-  },
-  {
-    invoiceNumber: 423498,
-    invoiceDate: '15/05/2021',
-    products: [
-        {
-            quantity: "1",
-            description: `Chaussures bleues`,
-            price: 85,
-            tax: 20,
-        }
-    ],
-  }
-];
 
 const SyncDemo:React.FunctionComponent = () => {
 	const userJSON = localStorage.getItem('sync:user');
@@ -52,7 +24,7 @@ const SyncDemo:React.FunctionComponent = () => {
 
   if (isWellConsented && !isFetching && !isFetched) {
     setIsFetching(true);
-    api.get(`/consumer/invoice/${propOr('', 'email', user)}/30fb5bcd-120d-4ad9-9404-9bf5d57db8af`)
+    api.get(`/consumer/invoice/${propOr('', 'email', user)}/${window.env.MISAKEY_PRODUCER_ORG_ID}`)
     .then(data => {
       setPurchases(data);
       setIsFetched(true);
