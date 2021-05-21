@@ -26,6 +26,7 @@ export const postInvoiceProducer = (req: Request, res: Response) => {
                     data: result.jsonBuff,
                     filename: `facture-${result.invoiceData.invoiceNumber}.json`,
                   },
+                  `Votre commande est en route. Vous pouvez suivre votre livraison en suivant ce lien: https://www.colisimaximo.fr/deliveryStatus?orderId=${result.invoiceData.invoiceNumber}`,
                 ],
                 boxTitle: `Commande n°${result.invoiceData.invoiceNumber}`,
                 dataSubject: req.body.email,
