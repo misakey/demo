@@ -4,7 +4,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
+
+import { propOr } from 'ramda';
+
 
 
 import { ReactComponent as ShoeIcon } from 'ressources/img/shoe.svg';
@@ -15,8 +17,10 @@ import { colorsToHex } from 'helpers/generateRandomCart';
 interface Product {
   quantity: string,
   description: string,
+  color: string,
   price: number,
   tax: number,
+  priceWithTax: number,
 }
 
 interface Purchase {
@@ -39,10 +43,9 @@ const DataViz = ({ purchases }:DataVizProps):React.ReactElement => (
     {purchases.map((purchase) => (
       <ListItem>
         <ListItemAvatar>
-              <SvgIcon component={ShoeIcon} fontSize="large" viewBox="0 0 512 512" style={{ color: colorsToHex(purchase.data.products[0].description.split(' ')[1]), fontSize: 80 }}/>
-
+              <SvgIcon component={ShoeIcon} fontSize="large" viewBox="0 0 512 512" style={{ color: colorsToHex(purchase.data.products[0].color), fontSize: 80 }}/>
         </ListItemAvatar>
-        <ListItemText primary={`${purchase.data.products[0].description} - ${purchase.data.products[0].price*(100+purchase.data.products[0].tax)/100}€`} secondary={purchase.data.invoiceDate} />
+        <ListItemText primary={`${purchase.data.products[0].description} - ${propOr('quelques ', 'priceWithTax', purchase.data.products[0])}€`} secondary={purchase.data.invoiceDate} />
       </ListItem>
     ))}
   </List>
