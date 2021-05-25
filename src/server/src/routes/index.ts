@@ -1,12 +1,13 @@
-const easyinvoice:any = require('easyinvoice');
-const fs = require('fs');
-
-import * as express from "express";
+import { Application } from "express";
 
 import { postInvoiceProducer } from './producer/invoice';
+import { authCallback } from './consummer/user';
+import { getInvoices } from './consummer/data';
 
-const registerRoutes = (app: express.Application) => {
+const registerRoutes = (app: Application) => {
     app.post('/producer/invoice', postInvoiceProducer);
+    app.get('/consumer/auth/callback', authCallback);
+    app.get('/consumer/invoice/:dataSubject/:producerId', getInvoices);
 };
 
 export default registerRoutes;

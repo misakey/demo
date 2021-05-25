@@ -41,8 +41,10 @@ const generateInvoice = (email:string, cart: Cart, callback: Callback) => {
         {
             "quantity": "1",
             "description": `Chaussures ${cart.color}`,
+            "color": cart.color,
             "price": cart.price / 1.2,
             "tax": 20,
+            "priceWithTax": cart.price,
         }
     ],
     "bottomNotice": "Ceci est une démo factice dans le cadre de la démonstration Misakey. Plus d'infos sur https://demo.misakey.com."
@@ -50,8 +52,8 @@ const generateInvoice = (email:string, cart: Cart, callback: Callback) => {
 
   easyinvoice.createInvoice(invoiceData, (result:any) => {
     const invoiceDataFile = JSON.stringify(invoiceData);
-    result.jsonBuff = new Buffer(invoiceDataFile);;
-    result.pdfBuff = new Buffer(result.pdf, 'base64');
+    result.jsonBuff = Buffer.from(invoiceDataFile);;
+    result.pdfBuff = Buffer.from(result.pdf, 'base64');
     result.invoiceData = invoiceData;
     callback(result);
   });

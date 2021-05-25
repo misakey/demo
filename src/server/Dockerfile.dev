@@ -1,0 +1,19 @@
+FROM node:14
+ARG MISAKEY_SDK_BASE_TARGET_DOMAIN=misakey.com.local
+
+
+WORKDIR /app
+
+COPY package*.json ./
+
+
+RUN npm install
+COPY . .
+
+RUN npm install nodemon -g
+
+ARG NODE_TLS_REJECT_UNAUTHORIZED=0
+
+EXPOSE 5000
+
+CMD [ "yarn", "start" ]
