@@ -6,7 +6,7 @@ import { getInvoices } from './consummer/data';
 
 const registerRoutes = (app: Application) => {
     app.post('/producer/invoice', postInvoiceProducer);
-    app.get('/user/callback', authCallback);
+    app.get('/consumer/auth/callback', authCallback);
     app.get('/consumer/invoice/:dataSubject/:producerId', getInvoices);
 };
 
