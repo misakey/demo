@@ -19,7 +19,7 @@ RUN yarn install
 # (see https://gitlab.misakey.dev/misakey/user-needs/-/issues/294
 # and https://create-react-app.dev/docs/advanced-configuration/
 # and https://drag13.io/posts/react-inline-runtimer-chunk/index.html)
-RUN MISAKEY_SDK_BASE_TARGET_DOMAIN=$MISAKEY_SDK_BASE_TARGET_DOMAIN INLINE_RUNTIME_CHUNK=false yarn run build --env=prod
+RUN REACT_APP_MISAKEY_SDK_BASE_TARGET_DOMAIN==$MISAKEY_SDK_BASE_TARGET_DOMAIN INLINE_RUNTIME_CHUNK=false yarn run build --env=prod
 
 
 FROM nginx:1.18.0-alpine
