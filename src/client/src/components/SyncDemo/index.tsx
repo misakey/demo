@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box'
 
 import { propOr } from 'ramda';
 
-import theme from './theme';
+import theme from '../VaultDemo/theme';
 import Header from './Header';
 import DataViz from './DataViz';
 import AskConsentButton from './AskConsentButton';
@@ -44,13 +44,14 @@ const SyncDemo:React.FunctionComponent = () => {
   return (
     <ThemeProvider theme={theme}>
 			<Header />
-      <Box mt={14}>
-				<AskConsentButton hasUser={user!==null} isWellConsented={isWellConsented} stopSync={stopSync} />
+      <Box mt={14} mb={3}>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          {(isWellConsented) ? (<div>{propOr('', 'email', user)}</div>) : (<div></div>)}
+          <AskConsentButton hasUser={user!==null} isWellConsented={isWellConsented} stopSync={stopSync} />
+
+        </Box>
 				{(isWellConsented) ? (
           <>
-            <div>
-              Voici la liste des achats liés à l'email {propOr('', 'email', user)}
-            </div>
             {(isFetching) ? 'Fetching' : (
               <DataViz purchases={purchases} />
             )}

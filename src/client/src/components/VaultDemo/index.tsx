@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { propOr } from 'ramda';
+
 import Header from './Header';
 
 import Cart from './Cart';
@@ -16,7 +18,12 @@ import api from 'helpers/api';
 
 
 const VaultDemo:React.FunctionComponent = () => {
-  const [email, setEmail] = useState('');
+
+	const userJSON = localStorage.getItem('sync:user');
+  const user = (userJSON !== null ? JSON.parse(userJSON) : null);
+  const initialEmail = `${propOr('', 'email', user)}`;
+
+  const [email, setEmail] = useState(initialEmail);
   const [formError, setFormError] = useState('');
   const [cart, setCart] = useState(generateRandomCart());
   const [step, setStep] = useState('cart');

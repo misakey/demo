@@ -33,11 +33,14 @@ const ConfirmationComponent = ({
 
   return (
     <>
-      <Box mt={1}>
+      <Box mt={1} display="flex" justifyContent="space-between">
         <Link onClick={onNewOrder} color="textPrimary" href="#" className={classes.link}>
           <ArrowBackIcon />
           Simulateur de panier
         </Link>
+        <Button to="/sync" component={RouterLink} variant="contained" color="primary">
+            Mon compte
+          </Button>
       </Box>
       <Box my={2} p={1}>
         <Typography variant="h4" align="center">
@@ -64,11 +67,6 @@ const ConfirmationComponent = ({
       <Box my={5}  display="flex" justifyContent="center" alignItems="center">
         <Link onClick={onNewOrder} color="textPrimary" href="#">
           Retour au simulateur de panier
-        </Link>
-      </Box>
-      <Box my={5}  display="flex" justifyContent="center" alignItems="center">
-        <Link  color="textPrimary" component={RouterLink} to="/sync">
-          Voir la démo Sync à présent
         </Link>
       </Box>
     </>

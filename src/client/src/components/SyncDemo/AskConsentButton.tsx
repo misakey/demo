@@ -17,13 +17,13 @@ interface AskConsentButtonProps {
 const AskConsentButton = ({ hasUser, isWellConsented, stopSync }:AskConsentButtonProps):React.ReactElement => {
   if (isWellConsented) {
     return (
-      <Button variant="contained" color="primary" onClick={stopSync}>Arrêter la syncro</Button>
+      <Button variant="contained" color="primary" onClick={stopSync}>Deconnexion</Button>
     );
   }
 
   return (
     <>
-      <Button variant="contained" color="primary" onClick={() => misakeySdk.userConsent('', [ PURCHASE_SCOPE ])}>Importer mes achats</Button>
+      <Button variant="contained" color="primary" onClick={() => misakeySdk.userConsent('', [ PURCHASE_SCOPE ])}>Me connecter</Button>
       {(hasUser) ? (
         <div>
           Vous devez consentir au partage de vos achats pour continuer

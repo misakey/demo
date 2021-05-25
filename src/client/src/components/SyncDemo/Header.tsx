@@ -12,6 +12,9 @@ import { grey } from '@material-ui/core/colors';
 
 import updateFavicons from 'helpers/updateFavicons';
 
+import logoMTS from '../VaultDemo/LogoMTS.png';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,18 +69,19 @@ const SyncHeader = ():React.ReactElement => {
         <Toolbar>
           <Grid container spacing={3}>
             <Grid item xs={2} className={classes.appLogo}>
+              <img src={logoMTS} height="33" alt="Misakey" />
               <Typography className={classes.appName}>
-                Sync Demo
+                AppDemo
               </Typography>
             </Grid>
             <Grid item xs={8} className={classes.myCart}>
               <Typography variant="h6" align="center">
-                Mes statistiques d'achat
+                Mon compte
               </Typography>
             </Grid>
             <Grid item xs={2} className={classes.back}>
               <Typography>
-                <Link component={RouterLink} to="/" color="textPrimary">Vault demo</Link>
+                <Link component={RouterLink} to="/" color="textPrimary">Faire un nouvel achat</Link>
               </Typography>
             </Grid>
           </Grid>
